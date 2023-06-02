@@ -5,4 +5,4 @@ street       = "123 Main St"
 city         = "Anytown"
 region       = "WA"
 postal_code  = "02122"
-menu_item    = ["philly", "medium"]
+menu_item    = ["philly", "medium", "thin"]

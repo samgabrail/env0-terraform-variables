@@ -31,13 +31,10 @@ data "dominos_menu_item" "item" {
   query_string = var.menu_item
 }
 
-output "OrderOutput" {
-  value = data.dominos_menu_item.item.matches[*]
+resource "dominos_order" "order" {
+  count      = var.order ? 1 : 0
+  api_object = data.dominos_address.addr.api_object
+  store_id   = data.dominos_store.store.store_id
+  item_codes = data.dominos_menu_item.item.matches[*].code
+  price_only = true
 }
-
-# resource "dominos_order" "order" {
-#   api_object = data.dominos_address.addr.api_object
-#   store_id   = data.dominos_store.store.store_id
-#   item_codes = data.dominos_menu_item.item.matches[*].code
-#   price_only = true
-# }

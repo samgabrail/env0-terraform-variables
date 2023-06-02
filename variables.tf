@@ -42,6 +42,10 @@ variable "order" {
 variable "menu_item" {
   type        = list(string)
   description = "A list of the items to order from the menu"
+  validation {
+    condition     = contains(var.menu_item, "thin")
+    error_message = "You must order a 'thin' pizza crust since it's our team's favourite"
+  }
 }
 
 variable "credit_card" {
