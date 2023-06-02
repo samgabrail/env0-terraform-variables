@@ -32,7 +32,7 @@ data "dominos_menu_item" "item" {
 }
 
 resource "dominos_order" "order" {
-  count      = var.order ? 1 : 0
+  count      = local.should_order
   api_object = data.dominos_address.addr.api_object
   store_id   = data.dominos_store.store.store_id
   item_codes = data.dominos_menu_item.item.matches[*].code
