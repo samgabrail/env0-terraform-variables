@@ -1,5 +1,5 @@
-first_name   = "John"
-last_name    = "Smith"
+first_name   = "Sam"
+last_name    = "Gabrail"
 phone_number = "15555555555"
 street       = "123 Main St"
 city         = "Anytown"
